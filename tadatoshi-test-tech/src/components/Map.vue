@@ -21,14 +21,18 @@
       @close="closeModal"
       :bikeInformations="bikeInformations"
     />
+    <UpdateBike
+    :bikeInformations="bikeInformations" />
   </div>
 </template>
 <script>
 import axios from "axios";
 import Modal from './Modal'
+import UpdateBike from './UpdateBike'
 export default {
   components: {
       Modal,
+      UpdateBike
   },
   data() {
     return {
@@ -38,7 +42,17 @@ export default {
       bikeInformations: ''
     };
   },
-  created() {
+  // created() {
+  //   axios
+  //     .get("https://jsonbox.io/box_a3adbf3558b31a69259a")
+  //     .then((res) =>
+  //       res.data.forEach((item, index) => {
+  //         this.info = res.data;
+  //       })
+  //     )
+  //     .catch((error) => console.log('error', error));
+  // },
+  mounted() {
     axios
       .get("https://jsonbox.io/box_a3adbf3558b31a69259a")
       .then((res) =>
@@ -47,8 +61,6 @@ export default {
         })
       )
       .catch((error) => console.log('error', error));
-  },
-  mounted() {
     this.geolocation();
   },
   methods: {
@@ -64,9 +76,9 @@ export default {
         this.isModalVisible = true;
         this.bikeInformations = bike
       },
-      closeModal(bike) {
-        this.isModalVisible = false;
-      },
+    closeModal(bike) {
+      this.isModalVisible = false;
+    },
     // onClick(bike) {
     //     alert(
     //         "Détail du vélo : \nstatus " +
