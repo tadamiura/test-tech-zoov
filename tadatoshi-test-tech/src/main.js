@@ -4,9 +4,35 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import * as GmapVue from 'gmap-vue'
+
+import Map from './components/Map'
+import UpdateBike from './components/UpdateBike'
+ 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
+
+function bikeInformation(route){
+  console.log('this', this)
+}
+
+const router = new VueRouter({
+  mode: 'history',
+  routes: [{
+  path: '/',
+  component: Map,
+  props: true,
+  name: 'root'
+  }, {
+    path: '/bike',
+    component: UpdateBike,
+    props: true, 
+    name: 'update-bike'
+  }, {
+  path: '*',
+  redirect: '/'
+  }]
+})
 
 Vue.use(GmapVue, {
   load: {
@@ -37,6 +63,7 @@ Vue.use(GmapVue, {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  router,
   components: { App },
   template: '<App/>'
 })
