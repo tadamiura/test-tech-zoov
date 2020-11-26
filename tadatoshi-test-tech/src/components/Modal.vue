@@ -37,16 +37,22 @@
         </section>
          <footer class="modal-footer">
           <slot name="footer">
-            modifier les informations du vélo 
+            Mettre à jour
 
-            <button
+            <!-- <button
               type="button"
               class="btn-green"
-              @click="updateStatus"
+              @click="updateStatus(bikeInformations)"
               :bikeInformations="bikeInformations"
             >
-              Close me!
-          </button>
+              Modifier 
+          </button> -->
+          <router-link :to="{name: 'update-bike'}" 
+          class="update-button" 
+          tag="button"
+          >
+          Modifier
+          </router-link>
         </slot>
       </footer>
       </div>
@@ -63,10 +69,12 @@
       close() {
         this.$emit('close');
       },
-      updateStatus() {
-        //   window.location.href = ''
-        const bikeId = this.bikeInformations.serial_number
-        this.$router.push({path : `/bike/${bikeId}`});
+      updateStatus(bikeInformations) {
+        this.bikeInformation = bikeInformations
+        this.$route.push({
+          path: '/bike'
+        })
+        this.$emit('close');
       }
     },
   };
@@ -102,11 +110,12 @@
     border-bottom: 1px solid #eeeeee;
     color: #4AAE9B;
     justify-content: space-between;
+    align-items: center;
   }
 
   .modal-footer {
     border-top: 1px solid #eeeeee;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 
   .modal-body {
