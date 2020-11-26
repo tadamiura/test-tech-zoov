@@ -1,41 +1,15 @@
 <template>
     <div class="update-bike">
-        <h2>Update bike number {{ bikeInformations.serial_number }}</h2>    
-        <form 
-        id="update"
-        @submit="updateBike(e)"
-        method="PUT">
-            <p>
-                <label for="battery">Niveau de la batterie</label><br>
-                <input 
-                id="battery" 
-                v-model="bikeInformations.battery_level"
-                type="number"
-                name="battery">    
-            </p>
-            <!-- <p>
-                <label for="status">Status</label><br>
-                <input 
-                id="status" 
-                v-model="bikeInformations.service_status"
-                type="number"
-                name="status">    
-            </p>
-            <p>
-                <label for="inOrder">En ordre</label><br>
-                <input 
-                id="inOrder" 
-                v-model="bikeInformations.in_order"
-                type="text"
-                name="inOrder">    
-            </p> -->
-            <p>
-            <input
-                type="submit"
-                value="Submit"
-            >
-            </p>
-        </form>
+        <h2><font-awesome-icon icon="info-circle"/>Bike's Informations</h2>
+        <ul>
+            <li><font-awesome-icon icon="bicycle"/>Numéro de série : {{ bikeInformations.serial_number }}</li>
+            <li><font-awesome-icon icon="parking"/>En ordre : {{ bikeInformations.in_order }}</li>
+            <li><font-awesome-icon icon="battery-three-quarters"/>Niveau de batterie : {{ bikeInformations.battery_level}}/{{ maxLevel }}</li>
+            <li><font-awesome-icon icon="compass"/>Coordonnées : <br>
+            lat : {{ bikeInformations.location.coordinates[1]}}<br>
+            lng : {{ bikeInformations.location.coordinates[0]}}</li>
+        </ul>    
+        
     </div>
 </template>
 
@@ -45,6 +19,7 @@ import axios from "axios"
 export default {
     data () {
         return {
+            maxLevel: 100
         }
     },
     props: [ 'bikeInformations'],
