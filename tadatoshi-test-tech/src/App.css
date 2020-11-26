@@ -79,7 +79,7 @@ ul {
 
 footer {
     font-size: 16px;
-    margin: 20px;
+    margin: 7% 20px;
     text-align: center;
 }
 
@@ -93,7 +93,7 @@ footer {
 
 .follow-us-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-top: 10px;
 }
 
@@ -102,6 +102,9 @@ footer {
     color: inherit;
 }
 
+.follow-us-container a svg {
+    margin: 0 8px;
+}
 @media screen and (min-width: 668px) {
     .map {
         border: 2px solid #FFF;
