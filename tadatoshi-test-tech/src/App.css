@@ -105,11 +105,15 @@ footer {
 .follow-us-container a svg {
     margin: 0 8px;
 }
+.follow-us-container a:hover{
+    transform: scale(1.30);
+    transition: all 1200ms;
+}
 @media screen and (min-width: 668px) {
     .map {
         border: 2px solid #FFF;
         background: #FFF;
-        margin: 2%;
+        margin: 2% 7%;        
         box-shadow: 2px 2px 20px 1px;
         border-radius: 20px;
     }
