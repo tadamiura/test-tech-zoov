@@ -30,7 +30,7 @@
               <ul>
                   <li>Numéro de série : {{ bikeInformations.serial_number }}</li>
                   <li>En ordre : {{ bikeInformations.service_status }}</li>
-                  <li>Niveau de la batterie : {{ bikeInformations.service_status }}/100</li>
+                  <li>Niveau de la batterie : {{ bikeInformations.battery_level }}/100</li>
                   <li>status : {{ bikeInformations.service_status }}</li>
               </ul>
           </slot>
