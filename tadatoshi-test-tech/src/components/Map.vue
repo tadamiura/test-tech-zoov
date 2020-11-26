@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="map">
     <GmapMap
       :center="{ lat: currentLocation.lat, lng: currentLocation.lng }"
       :zoom="14"
       map-type-id="terrain"
-      style="width: 100%; height: 600px"
+      style="width: 100%; height: 500px"
+      class="gmap"
     >
       <GmapMarker
         :key="index"
