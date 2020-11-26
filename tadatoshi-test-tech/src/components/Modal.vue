@@ -29,32 +29,12 @@
           <slot name="body">
               <ul>
                   <li>Numéro de série : {{ bikeInformations.serial_number }}</li>
-                  <li>En ordre : {{ bikeInformations.service_status }}</li>
+                  <li>En ordre : {{ bikeInformations.in_order }}</li>
                   <li>Niveau de la batterie : {{ bikeInformations.battery_level }}/100</li>
                   <li>status : {{ bikeInformations.service_status }}</li>
               </ul>
           </slot>
         </section>
-         <footer class="modal-footer">
-          <slot name="footer">
-            Mettre à jour
-
-            <!-- <button
-              type="button"
-              class="btn-green"
-              @click="updateStatus(bikeInformations)"
-              :bikeInformations="bikeInformations"
-            >
-              Modifier 
-          </button> -->
-          <router-link :to="{name: 'update-bike', params:{bikeId: bikeInformations.serial_number}}" 
-          class="update-button" 
-          tag="button"
-          >
-          Modifier
-          </router-link>
-        </slot>
-      </footer>
       </div>
     </div>
   </transition>
@@ -69,13 +49,6 @@
       close() {
         this.$emit('close');
       },
-      // updateStatus(bikeInformations) {
-      //   this.bikeInformation = bikeInformations
-      //   this.$route.push({
-      //     path: '/bike'
-      //   })
-      //   this.$emit('close');
-      // }
     },
   };
 </script>
