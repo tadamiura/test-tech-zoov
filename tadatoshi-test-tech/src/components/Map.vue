@@ -22,8 +22,8 @@
       @close="closeModal"
       :bikeInformations="bikeInformations"
     />
-    <UpdateBike
-    :bikeInformations="bikeInformations" />
+    <!-- <UpdateBike
+    :bikeInformations="bikeInformations" /> -->
   </div>
 </template>
 <script>
