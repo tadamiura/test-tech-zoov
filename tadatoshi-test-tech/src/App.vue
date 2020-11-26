@@ -6,7 +6,7 @@
     <Map />
     <footer>
       <div class="contact-us">
-        <a :href="`mailto:${contact}`">Contact us</a>
+        <a :href="`mailto:${contact}`"><font-awesome-icon icon="envelope"/>{{ mailMessage }}</a>
       </div>
       <div class="follow-us-container">
         <a href=""><font-awesome-icon :icon="['fab', 'facebook']" size="2x" /></a>
@@ -30,6 +30,7 @@ export default {
   },
   data () {
     return {
+      mailMessage: 'Contactez nous par mail !',
       contact: 'tadamiura@gmail.com'
     }
   }

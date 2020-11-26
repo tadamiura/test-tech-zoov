@@ -7,8 +7,9 @@ import './App.css'
 import * as GmapVue from 'gmap-vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faFacebook, faInstagram, faSnapchat, faYoutube } from '@fortawesome/free-brands-svg-icons'
-library.add(faLinkedin, faFacebook, faInstagram, faSnapchat, faYoutube)
+library.add(faLinkedin, faFacebook, faInstagram, faSnapchat, faYoutube, faEnvelope)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 // import Map from './components/Map'
 // import UpdateBike from './components/UpdateBike'
