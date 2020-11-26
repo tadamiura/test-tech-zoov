@@ -22,8 +22,9 @@
       @close="closeModal"
       :bikeInformations="bikeInformations"
     />
-    <!-- <UpdateBike
-    :bikeInformations="bikeInformations" /> -->
+    <UpdateBike
+    v-if="clickMarker"
+    :bikeInformations="bikeInformations" />
   </div>
 </template>
 <script>
@@ -40,7 +41,8 @@ export default {
       info: '',
       currentLocation: { lat: 0, lng: 0 },
       isModalVisible: false,
-      bikeInformations: ''
+      bikeInformations: '',
+      clickMarker: false
     };
   },
   mounted() {
@@ -66,9 +68,11 @@ export default {
     showModal(bike) {
         this.isModalVisible = true;
         this.bikeInformations = bike
+        this.clickMarker = false
       },
     closeModal(bike) {
       this.isModalVisible = false;
+      this.clickMarker = true;
     },
   },
 };
