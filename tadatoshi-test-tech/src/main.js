@@ -7,14 +7,12 @@ import * as GmapVue from 'gmap-vue'
 
 import Map from './components/Map'
 import UpdateBike from './components/UpdateBike'
+
+import './App.css'
  
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
-
-function bikeInformation(route){
-  console.log('this', this)
-}
 
 const router = new VueRouter({
   mode: 'history',
@@ -24,9 +22,9 @@ const router = new VueRouter({
   props: true,
   name: 'root'
   }, {
-    path: '/bike',
+    path: '/bike/:bikeId',
     component: UpdateBike,
-    props: true, 
+    props: {Map: true}, 
     name: 'update-bike'
   }, {
   path: '*',
@@ -38,25 +36,7 @@ Vue.use(GmapVue, {
   load: {
     key: 'AIzaSyANU7ETQ1AlEMaMpDmY9miT5xswu6DLKZk',
     libraries: 'places', // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
-
-    //// If you want to set the version, you can do so:
-    // v: '3.26',
   },
-
-  //// If you intend to programmatically custom event listener code
-  //// (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
-  //// instead of going through Vue templates (e.g. `<GmapMap @zoom_changed="someFunc">`)
-  //// you might need to turn this on.
-  // autobindAllEvents: false,
-
-  //// If you want to manually install components, e.g.
-  //// import {GmapMarker} from 'gmap-vue/src/components/marker'
-  //// Vue.component('GmapMarker', GmapMarker)
-  //// then set installComponents to 'false'.
-  //// If you want to automatically install all the components this property must be set to 'true':
   installComponents: true
 })
 
