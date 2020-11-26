@@ -2,35 +2,39 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import VueRouter from 'vue-router'
-import * as GmapVue from 'gmap-vue'
-
-import Map from './components/Map'
-import UpdateBike from './components/UpdateBike'
-
 import './App.css'
+// import VueRouter from 'vue-router'
+import * as GmapVue from 'gmap-vue'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faLinkedin, faFacebook, faInstagram, faSnapchat, faYoutube } from '@fortawesome/free-brands-svg-icons'
+library.add(faLinkedin, faFacebook, faInstagram, faSnapchat, faYoutube)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+// import Map from './components/Map'
+// import UpdateBike from './components/UpdateBike'
+
  
 Vue.config.productionTip = false
 
-Vue.use(VueRouter)
+// Vue.use(VueRouter)
 
-const router = new VueRouter({
-  mode: 'history',
-  routes: [{
-  path: '/',
-  component: Map,
-  props: true,
-  name: 'root'
-  }, {
-    path: '/bike/:bikeId',
-    component: UpdateBike,
-    props: {Map: true}, 
-    name: 'update-bike'
-  }, {
-  path: '*',
-  redirect: '/'
-  }]
-})
+// const router = new VueRouter({
+//   mode: 'history',
+//   routes: [{
+//   path: '/',
+//   component: Map,
+//   props: true,
+//   name: 'root'
+//   }, {
+//     path: '/bike/:bikeId',
+//     component: UpdateBike,
+//     props: {Map: true}, 
+//     name: 'update-bike'
+//   }, {
+//   path: '*',
+//   redirect: '/'
+//   }]
+// })
 
 Vue.use(GmapVue, {
   load: {
@@ -43,7 +47,7 @@ Vue.use(GmapVue, {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  // router,
   components: { App },
   template: '<App/>'
 })
