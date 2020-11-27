@@ -20,6 +20,10 @@
   </div>
 </template>
 
+<style lang="stylus">
+@import "~@zoov/design-system/src/styles/index.styl";
+</style>
+
 <script>
 import Map from './components/Map'
 
