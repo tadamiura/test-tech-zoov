@@ -39,7 +39,7 @@
 <script>
 export default {
   name: "modal",
-  props: "bikeInformations",
+  props: ["bikeInformations"],
   methods: {
     close() {
       this.$emit("close");
