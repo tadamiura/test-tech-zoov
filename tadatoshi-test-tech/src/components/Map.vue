@@ -15,6 +15,7 @@
           lng: bike.location.coordinates[0],
         }"
         @click="showModal(bike)"
+        :icon="{ url: markerPlace }"
       />
     </GmapMap>
     <Modal
@@ -22,28 +23,31 @@
       @close="closeModal"
       :bikeInformations="bikeInformations"
     />
-    <UpdateBike
-    v-if="clickMarker"
-    :bikeInformations="bikeInformations" />
+    <UpdateBike v-if="clickMarker" :bikeInformations="bikeInformations" />
   </div>
 </template>
 <script>
 import axios from "axios";
-import Modal from './Modal'
-import UpdateBike from './UpdateBike'
+import Modal from "./Modal";
+import UpdateBike from "./UpdateBike";
 export default {
   components: {
-      Modal,
-      UpdateBike
+    Modal,
+    UpdateBike,
   },
   data() {
     return {
-      info: '',
+      info: "",
       currentLocation: { lat: 0, lng: 0 },
       isModalVisible: false,
-      bikeInformations: '',
-      clickMarker: false
+      bikeInformations: "",
+      clickMarker: false,
     };
+  },
+  computed: {
+    markerPlace() {
+      return 'https://i.ibb.co/h9G3p1d/sty-QR-logo-pwa-3.png';
+    },
   },
   mounted() {
     axios
@@ -53,7 +57,7 @@ export default {
           this.info = res.data;
         })
       )
-      .catch((error) => console.log('error', error));
+      .catch((error) => console.log("error", error));
     this.geolocation();
   },
   methods: {
@@ -66,10 +70,10 @@ export default {
       });
     },
     showModal(bike) {
-        this.isModalVisible = true;
-        this.bikeInformations = bike
-        this.clickMarker = false
-      },
+      this.isModalVisible = true;
+      this.bikeInformations = bike;
+      this.clickMarker = false;
+    },
     closeModal(bike) {
       this.isModalVisible = false;
       this.clickMarker = true;
