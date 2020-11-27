@@ -27,16 +27,20 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-    }
+    },
   },
   module: {
     rules: [
       {
+        test: /\.pug$/,
+        loader: 'pug-plain-loader',
+      },
+      {
         test: /\.styl(us)?$/,
-        loader: 'stylus-loader',
-        options: {
-          import: ['~@zoov/design-system/src/styles/components'],
-        },
+        use: [
+          'style-loader',
+          'stylus-loader',
+        ],
       },
       {
         test: /\.vue$/,
@@ -46,15 +50,19 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client'), resolve('node_modules/@zoov/design-system')]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.svg?$/,
+        loader: 'svg-inline-loader',
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
