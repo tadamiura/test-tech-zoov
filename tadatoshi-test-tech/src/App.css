@@ -2,7 +2,10 @@ body {
     margin: 0;
     color: #FFF;
     background-color:#33C5FF;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+/* HEADER */
 
 header {
     text-align: center;
@@ -11,6 +14,9 @@ header img {
     width: 55px;
     padding: 20px;
 }
+
+
+/* UPDATE BIKE CARD */
 
 .update-bike {
     color: #FFF;
@@ -35,6 +41,9 @@ header img {
     font-weight: 700;
     font-size: 24px;
 }
+
+
+/* MODAL */
 
 .modal-backdrop {
     position: fixed;
@@ -74,10 +83,6 @@ ul {
     align-items: center;
 }
 
-.update-button {
-    text-align: right;
-}
-
 .modal-body {
     color: rgb(23, 13, 80);
     background-color: #FFF;
@@ -94,6 +99,8 @@ ul {
     color: #FFF;
     background: transparent;
 }
+
+/* FOOTER */
 
 footer {
     font-size: 16px;
@@ -120,13 +127,16 @@ footer {
     color: inherit;
 }
 
-.follow-us-container a svg {
+a svg {
     margin: 0 8px;
 }
 .follow-us-container a:hover{
     transform: scale(1.30);
     transition: all 1200ms;
 }
+
+/* MEDIA QUERY */
+
 @media screen and (min-width: 668px) {
     .map {
         border: 2px solid #FFF;
