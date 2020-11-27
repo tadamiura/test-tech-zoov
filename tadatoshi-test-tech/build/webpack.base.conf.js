@@ -32,6 +32,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.styl(us)?$/,
+        loader: 'stylus-loader',
+        options: {
+          import: ['~@zoov/design-system/src/styles/components'],
+        },
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
