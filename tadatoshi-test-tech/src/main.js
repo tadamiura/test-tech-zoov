@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import './App.css'
 // import VueRouter from 'vue-router'
+import zds from '@zoov/design-system';
+import * as components from '@zoov/design-system/src/components'
+
 import * as GmapVue from 'gmap-vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -14,7 +17,8 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 // import Map from './components/Map'
 // import UpdateBike from './components/UpdateBike'
 
- 
+Vue.use(zds, { components });
+
 Vue.config.productionTip = false
 
 // Vue.use(VueRouter)
