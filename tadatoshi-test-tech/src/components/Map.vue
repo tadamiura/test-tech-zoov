@@ -51,7 +51,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://jsonbox.io/box_a3adbf3558b31a69259a")
+      .get("https://jsonbox.io/box_82a8f61b98e392c9568b")
       .then((res) =>
         res.data.forEach((item, index) => {
           this.info = res.data;
