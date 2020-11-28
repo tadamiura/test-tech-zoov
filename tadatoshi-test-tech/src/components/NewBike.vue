@@ -2,13 +2,13 @@
     <div class="new-bike">
         <form
   id="app"
-  @submit="checkForm"
+  @submit="addNewBike"
   method="post"
 >
 	<h2>Ajouter un nouveau vélo</h2>
   <p v-if="errors.length">
     <b>Please correct the following error(s):</b>
-    <ul>
+    <ul class="error-message">
       <li v-for="error in errors" :key="error.id">{{ error }}</li>
     </ul>
   </p>
@@ -107,16 +107,26 @@ export default {
       lng: null,
       in_order: true,
       service_status: 1,
-      battery_level: 0,
+			battery_level: 0,
+			isANewBike: false
     };
-  },
+	},
+	props: ["info"],
   methods: {
-    checkForm (e) {
+    addNewBike (e) {
       e.preventDefault();
       this.errors = [];
 
-      if (!this.serial_number || !this.lat || !this.lng) {
-        this.errors.push("serial number & location are required");
+			const checkBikes = (this.info).find( bike => bike.serial_number === this.serial_number)
+			if (checkBikes === undefined) {
+				 this.isANewBike = true
+				console.log('true ',this.isANewBike)
+			} else {
+				console.log('false ',this.isANewBike)
+				 this.isANewBike = false
+			}
+      if (this.isANewBike === false) { console.log('test ', this.isANewBike)
+        this.errors.push("this serial number already exist");
       } else {
         axios
           .post("https://jsonbox.io/box_82a8f61b98e392c9568b", {
@@ -129,7 +139,7 @@ export default {
             service_status: this.service_status,
             battery_level: this.battery_level,
           })
-          .then((res) => res.data && console.log(res.data))
+          .then((res) => res.data)
           .then((res) => alert(`le vélo a bien été ajouté`))
           .catch((err) =>
             alert(`erreur dans l'ajout d'un nouveau vélo : ${err}`)
