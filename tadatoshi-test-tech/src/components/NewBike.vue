@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="new-bike">
         <form
   id="app"
   @submit="checkForm"
   method="post"
 >
-
+	<h2>Ajouter un nouveau vélo</h2>
   <p v-if="errors.length">
     <b>Please correct the following error(s):</b>
     <ul>
@@ -14,7 +14,7 @@
   </p>
 
   <p>
-    <label for="serial_number">Serial Number</label>
+    <label for="serial_number">Serial Number</label><br>
     <input
       id="serial_number"
       v-model="serial_number"
@@ -26,7 +26,7 @@
   </p>
 
   <p>
-    <label for="location-lat">Location-lat</label>
+    <label for="location-lat">Location-lat</label><br>
     <input
       id="location-lat"
       v-model="lat"
@@ -38,7 +38,7 @@
   </p>
 
   <p>
-    <label for="location-lng">Location-lng</label>  
+    <label for="location-lng">Location-lng</label><br>  
     <input
       id="location-lng"
       v-model="lng"
@@ -49,7 +49,7 @@
   </p>
 
   <p>
-    <label for="in_order">In Order</label>
+    <label for="in_order">In Order</label><br>
     <select
       id="in_order"
       v-model="in_order"
@@ -61,7 +61,7 @@
   </p>
 
   <p>
-    <label for="service_status">Service status</label>
+    <label for="service_status">Service status</label><br>
     <select
       id="service_status"
       v-model="service_status"
@@ -74,7 +74,7 @@
   </p>
 
   <p>
-    <label for="battery_level">Battery Level</label>
+    <label for="battery_level">Battery Level</label><br>
     <input
       id="battery_level"
       type="number"
