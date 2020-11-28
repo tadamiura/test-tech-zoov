@@ -23,8 +23,17 @@
       @close="closeModal"
       :bikeInformations="bikeInformations"
     />
-    <UpdateBike v-if="clickMarker" :bikeInformations="bikeInformations" />
+    <button 
+    class="button-add-bike"
+    type="button"
+    @click="addBike"
+    v-html="createNewBike ? 'QUITTER LE FORMULAIRE' : 'AJOUTER UN VELO'"
+    >
+    </button>
+    <UpdateBike v-if="clickMarker" 
+    :bikeInformations="bikeInformations" />
     <NewBike 
+    v-if="createNewBike"
     :bikeInformations="bikeInformations"
     :info="info" 
     />
@@ -48,6 +57,8 @@ export default {
       isModalVisible: false,
       bikeInformations: "",
       clickMarker: false,
+      createNewBike: false,
+      addBikeMessage : "AJOUTER UN VELO /FERMER"
     };
   },
   computed: {
@@ -83,6 +94,9 @@ export default {
     closeModal(bike) {
       this.isModalVisible = false;
       this.clickMarker = true;
+    },
+    addBike() {
+        this.createNewBike = !this.createNewBike
     },
   },
 };
