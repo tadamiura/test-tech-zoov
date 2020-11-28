@@ -24,16 +24,19 @@
       :bikeInformations="bikeInformations"
     />
     <UpdateBike v-if="clickMarker" :bikeInformations="bikeInformations" />
+    <NewBike :bikeInformations="bikeInformations" />
   </div>
 </template>
 <script>
 import axios from "axios";
 import Modal from "./Modal";
 import UpdateBike from "./UpdateBike";
+import NewBike from "./NewBike"
 export default {
   components: {
     Modal,
     UpdateBike,
+    NewBike
   },
   data() {
     return {
@@ -51,7 +54,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://jsonbox.io/box_a3adbf3558b31a69259a")
+      .get("https://jsonbox.io/box_82a8f61b98e392c9568b")
       .then((res) =>
         res.data.forEach((item, index) => {
           this.info = res.data;
