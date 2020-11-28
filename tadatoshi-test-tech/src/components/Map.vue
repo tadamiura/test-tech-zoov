@@ -24,7 +24,10 @@
       :bikeInformations="bikeInformations"
     />
     <UpdateBike v-if="clickMarker" :bikeInformations="bikeInformations" />
-    <NewBike :bikeInformations="bikeInformations" />
+    <NewBike 
+    :bikeInformations="bikeInformations"
+    :info="info" 
+    />
   </div>
 </template>
 <script>
