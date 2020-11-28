@@ -1,20 +1,20 @@
 <template>
-  <div id="app">
+  <div id="app" class="primary">
     <header class="header">
       <img src="./assets/logo.png" alt="logo">
     </header>
     <Map />
-    <footer>
-      <div class="contact-us">
-        <a :href="`mailto:${contact}`"><font-awesome-icon icon="envelope"/>{{ mailMessage }}</a>
+    <footer class="typography--subheading text--center">
+      <div class="contact-us typography--display-1">
+        <a :href="`mailto:${contact}`"><font-awesome-icon class="mx-1" icon="envelope"/>{{ mailMessage }}</a>
       </div>
-      <div class="follow-us-container">
-        <a href=""><font-awesome-icon :icon="['fab', 'facebook']" size="2x" /></a>
-        <a href=""><font-awesome-icon :icon="['fab', 'linkedin']" size="2x"/></a>
-        <a href=""><font-awesome-icon :icon="['fab', 'instagram']" size="2x" /></a>
-        <a href=""><font-awesome-icon :icon="['fab', 'snapchat']" size="2x" /></a>    
-        <a href=""><font-awesome-icon :icon="['fab', 'youtube']" size="2x" /></a>
-        <a href=""><font-awesome-icon :icon="['fab', 'linkedin']" size="2x" /></a>  
+      <div class="follow-us-container mt-1">
+        <a class="mx-1" href=""><font-awesome-icon :icon="['fab', 'facebook']" size="2x" /></a>
+        <a class="mx-1" href=""><font-awesome-icon :icon="['fab', 'linkedin']" size="2x"/></a>
+        <a class="mx-1" href=""><font-awesome-icon :icon="['fab', 'instagram']" size="2x" /></a>
+        <a class="mx-1" href=""><font-awesome-icon :icon="['fab', 'snapchat']" size="2x" /></a>    
+        <a class="mx-1" href=""><font-awesome-icon :icon="['fab', 'youtube']" size="2x" /></a>
+        <a class="mx-1" href=""><font-awesome-icon :icon="['fab', 'linkedin']" size="2x" /></a>  
       </div>
     </footer>
   </div>

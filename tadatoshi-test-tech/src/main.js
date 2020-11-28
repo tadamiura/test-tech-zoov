@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import './App.css'
-// import VueRouter from 'vue-router'
 import zds from '@zoov/design-system';
 import * as components from '@zoov/design-system/src/components'
 
@@ -14,32 +13,11 @@ import { faEnvelope,faBicycle, faCompass, faBatteryThreeQuarters, faParking, faI
 import { faLinkedin, faFacebook, faInstagram, faSnapchat, faYoutube } from '@fortawesome/free-brands-svg-icons'
 library.add(faLinkedin, faFacebook, faInstagram, faSnapchat, faYoutube, faEnvelope,faBicycle, faCompass, faBatteryThreeQuarters, faParking, faInfoCircle, faLockOpen)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
-// import Map from './components/Map'
-// import UpdateBike from './components/UpdateBike'
 
 Vue.use(zds, { components });
 
 Vue.config.productionTip = false
 
-// Vue.use(VueRouter)
-
-// const router = new VueRouter({
-//   mode: 'history',
-//   routes: [{
-//   path: '/',
-//   component: Map,
-//   props: true,
-//   name: 'root'
-//   }, {
-//     path: '/bike/:bikeId',
-//     component: UpdateBike,
-//     props: {Map: true}, 
-//     name: 'update-bike'
-//   }, {
-//   path: '*',
-//   redirect: '/'
-//   }]
-// })
 
 Vue.use(GmapVue, {
   load: {

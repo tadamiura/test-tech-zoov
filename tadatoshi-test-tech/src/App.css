@@ -2,7 +2,6 @@ body {
     margin: 0;
     color: #FFF;
     background-color:#33C5FF;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* HEADER */
@@ -12,38 +11,26 @@ header {
 }
 header img {
     width: 55px;
-    padding: 20px;
+    padding: 6px;
 }
-
 
 /* UPDATE BIKE CARD */
 
 .update-bike {
-    color: #FFF;
-    font-size: 16px;
-    text-align: start;
+    color:  rgb(23, 13, 80);
     border-radius: 15px;
-    padding: 10px;
-    background-color: rgb(23, 13, 80);
-    margin: 20px 7%;
-    text-align: center;
+    margin: 20px 7%; 
 }
-
-.update-bike svg {
-    margin: 0 10px;
-}
-
-.update-bike ul {
-    font-size: 20px;
-}
-
-.bold {
-    font-weight: 700;
-    font-size: 24px;
-}
-
 
 /* MODAL */
+
+.modal {
+    box-shadow: 2px 2px 20px 1px;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
 
 .modal-backdrop {
     position: fixed;
@@ -57,37 +44,20 @@ header img {
     align-items: center;
   }
 
-.modal {
-    box-shadow: 2px 2px 20px 1px;
-    overflow-x: auto;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-}
-
 ul {
-    text-align: left;
-    margin-left: 5px;
-    padding: 0;
     list-style: none;
-    font-size: 20px;
 }
 
 .modal-header {
-    padding: 15px;
     display: flex;
-    background-color: rgb(23, 13, 80);
-    border-bottom: 1px solid #eeeeee;
-    color: #FFF;
     justify-content: space-between;
     align-items: center;
 }
 
 .modal-body {
-    color: rgb(23, 13, 80);
+    color: #331c54;
     background-color: #FFF;
     position: relative;
-    padding: 20px 10px;
 }
 
 .btn-close {
@@ -100,17 +70,38 @@ ul {
     background: transparent;
 }
 
+/* FORM */
+
+form {
+    border-radius: 15px;
+    margin: 20px 7%; 
+}
+
+input, select {
+    height: 25px;
+    width: -webkit-fill-available;
+    background-color: #FFF!important;
+}
+
+.error-message {
+    color: coral;
+}
+select {
+    text-align-last: center;
+}
+
+.button-add-bike {
+    border-radius: 15px;
+    border: 1px solid #111;
+}
+
 /* FOOTER */
 
 footer {
-    font-size: 16px;
     margin: 7% 20px;
-    text-align: center;
+
 }
 
-.contact-us {
-    font-size: 20px;
-}
 .contact-us a {
     text-decoration: none;
     color: inherit;
@@ -119,7 +110,6 @@ footer {
 .follow-us-container {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
 }
 
 .follow-us-container a {
@@ -127,9 +117,6 @@ footer {
     color: inherit;
 }
 
-a svg {
-    margin: 0 8px;
-}
 .follow-us-container a:hover{
     transform: scale(1.30);
     transition: all 1200ms;
@@ -151,10 +138,30 @@ a svg {
         
     }
     .modal {
-        width: 70%;
-    }
-    .update-bike {
         width: 60%;
-        margin: 20px auto;
+    }
+    .update-bike, form {
+        width: 75%;
+        margin: 20px auto!important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .map {
+        display: flex;
+        margin: 2% 5%
+    }
+    .button-add-bike{
+        position: absolute;
+        margin: 1% 2%;
+    }
+    .gmap {
+        width: 100% !important;
+        margin: 100px 2% 20px 2%;
+    }
+   
+    .update-bike, form {
+        width: 300px;
+        margin: 20px!important;
     }
 }

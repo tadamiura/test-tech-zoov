@@ -1,44 +1,44 @@
 <template>
-    <div class="update-bike">
-        <h2><font-awesome-icon icon="info-circle"/>Selected Bike's Informations</h2>
-        <ul>
-            <li>
-                <font-awesome-icon icon="bicycle"/>
+    <div class="update-bike info pa-3">
+        <h2 class="typography--display-1 mb-3"><font-awesome-icon class="mx-1" icon="info-circle"/>Selected Bike's Informations</h2>
+        <ul class="typography--body text--left">
+            <li class="typography--title">
+                <font-awesome-icon class="mx-1" icon="bicycle"/>
                 Numéro de série : 
-                <span class="bold">{{ bikeInformations.serial_number }}
+                <span class="text--700">{{ bikeInformations.serial_number }}
                 </span>
             </li>
             <br>
-            <li>
-                <font-awesome-icon icon="parking"/>
+            <li class="typography--title">
+                <font-awesome-icon class="mx-1" icon="parking"/>
                 En ordre : 
-                <span class="bold">{{ inOrder }}
+                <span class="text--700">{{ inOrder }}
                 </span>
             </li>
             <br>
-            <li>
-                <font-awesome-icon icon="lock-open"/>
+            <li class="typography--title">
+                <font-awesome-icon class="mx-1" icon="lock-open"/>
                 Etat de service : 
-                <span class="bold">{{ serviceStatus }}
+                <span class="text--bold">{{ serviceStatus }}
                 </span>
             </li>
             <br>
-            <li>
-                <font-awesome-icon icon="battery-three-quarters"/>
+            <li class="typography--title">
+                <font-awesome-icon class="mx-1" icon="battery-three-quarters"/>
             Niveau de batterie : 
-                <span class="bold">{{ bikeInformations.battery_level}}/{{ maxLevel }}
+                <span class="text--bold">{{ bikeInformations.battery_level}}/{{ maxLevel }}
                 </span>
             </li>
             <br>
-            <li>
-                <font-awesome-icon icon="compass"/>
+            <li class="typography--title">
+                <font-awesome-icon class="mx-1" icon="compass"/>
                 Coordonnées : 
                 <br>
                 lat : 
-                <span class="bold">{{ bikeInformations.location.coordinates[1]}}</span>
+                <span class="text--bold">{{ bikeInformations.location.coordinates[1]}}</span>
                 <br>
                 lng : 
-                <span class="bold">{{ bikeInformations.location.coordinates[0]}}
+                <span class="text--bold">{{ bikeInformations.location.coordinates[0]}}
                 </span>
             </li>
         </ul>    

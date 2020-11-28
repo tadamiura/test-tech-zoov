@@ -1,5 +1,5 @@
 <template>
-  <div class="map">
+  <div class="map text--center">
     <GmapMap
       :center="{ lat: currentLocation.lat, lng: currentLocation.lng }"
       :zoom="14"
@@ -23,17 +23,32 @@
       @close="closeModal"
       :bikeInformations="bikeInformations"
     />
-    <UpdateBike v-if="clickMarker" :bikeInformations="bikeInformations" />
+    <button 
+    class="button-add-bike ma-3 neutral typography--button pa-2"
+    type="button"
+    @click="addBike"
+    v-html="createNewBike ? 'QUITTER LE FORMULAIRE' : 'AJOUTER UN VELO'"
+    >
+    </button>
+    <NewBike 
+    v-if="createNewBike"
+    :bikeInformations="bikeInformations"
+    :info="info" 
+    />
+    <UpdateBike v-if="clickMarker" 
+    :bikeInformations="bikeInformations" />
   </div>
 </template>
 <script>
 import axios from "axios";
 import Modal from "./Modal";
 import UpdateBike from "./UpdateBike";
+import NewBike from "./NewBike"
 export default {
   components: {
     Modal,
     UpdateBike,
+    NewBike
   },
   data() {
     return {
@@ -42,6 +57,8 @@ export default {
       isModalVisible: false,
       bikeInformations: "",
       clickMarker: false,
+      createNewBike: false,
+      addBikeMessage : "AJOUTER UN VELO /FERMER"
     };
   },
   computed: {
@@ -77,6 +94,9 @@ export default {
     closeModal(bike) {
       this.isModalVisible = false;
       this.clickMarker = true;
+    },
+    addBike() {
+        this.createNewBike = !this.createNewBike
     },
   },
 };

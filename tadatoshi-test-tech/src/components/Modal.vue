@@ -7,7 +7,7 @@
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
       >
-        <header class="modal-header" id="modalTitle">
+        <header class="modal-header secondary typography--heading pa-2" id="modalTitle">
           <slot name="header">
             Informations sur le vélo
             <button
@@ -20,15 +20,15 @@
             </button>
           </slot>
         </header>
-        <section class="modal-body" id="modalDescription">
+        <section class="modal-body px-3 py-2" id="modalDescription">
           <slot name="body">
-            <ul>
-              <li>Numéro de série : {{ bikeInformations.serial_number }}</li>
-              <li>En ordre : {{ bikeInformations.in_order }}</li>
-              <li>
-                Niveau de la batterie : {{ bikeInformations.battery_level }}/100
+            <ul class="typography--body ml-1">
+              <li class="ml-1">Numéro de série : <span class="text--bold typography--subheading">{{ bikeInformations.serial_number }}</span></li>
+              <li class="ml-1">En ordre : <span class="text--bold typography--subheading">{{ bikeInformations.in_order }}</span></li>
+              <li class="ml-1">
+                Niveau de la batterie : <span class="text--bold typography--subheading">{{ bikeInformations.battery_level }}/100</span>
               </li>
-              <li>status : {{ bikeInformations.service_status }}</li>
+              <li class="ml-1">status : <span class="text--bold typography--subheading">{{ bikeInformations.service_status }}</span></li>
             </ul>
           </slot>
         </section>
