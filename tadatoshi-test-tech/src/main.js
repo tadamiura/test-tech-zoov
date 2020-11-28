@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import './App.css'
-// import VueRouter from 'vue-router'
 import * as GmapVue from 'gmap-vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -11,31 +10,9 @@ import { faEnvelope,faBicycle, faCompass, faBatteryThreeQuarters, faParking, faI
 import { faLinkedin, faFacebook, faInstagram, faSnapchat, faYoutube } from '@fortawesome/free-brands-svg-icons'
 library.add(faLinkedin, faFacebook, faInstagram, faSnapchat, faYoutube, faEnvelope,faBicycle, faCompass, faBatteryThreeQuarters, faParking, faInfoCircle, faLockOpen)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
-// import Map from './components/Map'
-// import UpdateBike from './components/UpdateBike'
-
  
 Vue.config.productionTip = false
 
-// Vue.use(VueRouter)
-
-// const router = new VueRouter({
-//   mode: 'history',
-//   routes: [{
-//   path: '/',
-//   component: Map,
-//   props: true,
-//   name: 'root'
-//   }, {
-//     path: '/bike/:bikeId',
-//     component: UpdateBike,
-//     props: {Map: true}, 
-//     name: 'update-bike'
-//   }, {
-//   path: '*',
-//   redirect: '/'
-//   }]
-// })
 
 Vue.use(GmapVue, {
   load: {
