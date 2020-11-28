@@ -15,6 +15,10 @@ header img {
     padding: 20px;
 }
 
+/* MAP */
+.map {
+    text-align: center;
+}
 
 /* UPDATE BIKE CARD */
 
@@ -196,9 +200,13 @@ a svg {
         display: flex;
         margin: 2% 15%
     }
+    .button-add-bike{
+        position: absolute;
+        margin: 1% 2%;
+    }
     .gmap {
         width: 60% !important;
-        margin: 3% 2%;
+        margin: 5% 2%;
     }
     .new-bike {
         width: 40% !important;
