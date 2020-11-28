@@ -100,6 +100,34 @@ ul {
     background: transparent;
 }
 
+/* FORM */
+
+form {
+    margin: 20px 7%;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(23, 13, 80);
+    text-align: start;
+}
+
+form p {
+    margin: 25px 0;
+}
+
+input, select {
+    margin: 5px 0;
+    height: 25px;
+    width: -webkit-fill-available;;
+}
+
+
+select {
+    text-align-last: center;
+}
+
 /* FOOTER */
 
 footer {
@@ -153,8 +181,25 @@ a svg {
     .modal {
         width: 70%;
     }
-    .update-bike {
+    .update-bike, form {
         width: 60%;
         margin: 20px auto;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .map {
+        display: flex;
+        margin: 2% 15%
+    }
+    .gmap {
+        width: 60% !important;
+        margin: 3% 2%;
+    }
+    .new-bike {
+        width: 40% !important;
+    }
+    form {
+        margin: 5% auto;
     }
 }
