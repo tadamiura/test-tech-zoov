@@ -123,7 +123,11 @@ input, select {
     width: -webkit-fill-available;;
 }
 
-
+.error-message {
+    color: coral;
+    font-weight: 900;
+    font-size: 24px;
+}
 select {
     text-align-last: center;
 }
