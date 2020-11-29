@@ -128,16 +128,14 @@ export default {
 			const checkBikes = (this.info).find( bike => bike.serial_number === this.serial_number)
 			if (checkBikes === undefined) {
 				 this.isANewBike = true
-				console.log('true ',this.isANewBike)
 			} else {
-				console.log('false ',this.isANewBike)
 				 this.isANewBike = false
 			}
       if (this.isANewBike === false) { console.log('test ', this.isANewBike)
         this.errors.push("this serial number already exist");
       } else {
         axios
-          .post("https://jsonbox.io/box_82a8f61b98e392c9568b", {
+          .post("https://jsonbox.io/box_ac93166e2a967868a774", {
             serial_number: this.serial_number,
             location: {
               type: "Point",
@@ -149,8 +147,7 @@ export default {
           })
           .then((res) => res.data)
           .then((res) => alert(`le vélo a bien été ajouté`))
-          .catch((err) =>
-            alert(`erreur dans l'ajout d'un nouveau vélo : ${err}`)
+          .catch((err) => alert(`erreur dans l'ajout d'un nouveau vélo : ${err}`)
           );
       }
     },
