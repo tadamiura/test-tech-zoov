@@ -86,6 +86,7 @@ input, select {
 .error-message {
     color: coral;
 }
+
 select {
     text-align-last: center;
 }
@@ -132,14 +133,17 @@ footer {
         box-shadow: 2px 2px 20px 1px;
         border-radius: 20px;
     }
+    
     .gmap {
         margin: 3% auto;
         width: 90% !important;
         
     }
+
     .modal {
         width: 60%;
     }
+
     .update-bike, form {
         width: 75%;
         margin: 20px auto!important;
@@ -151,15 +155,17 @@ footer {
         display: flex;
         margin: 2% 5%
     }
+
     .button-add-bike{
         position: absolute;
         margin: 1% 2%;
     }
+
     .gmap {
         width: 100% !important;
         margin: 100px 2% 20px 2%;
     }
-   
+
     .update-bike, form {
         width: 300px;
         margin: 20px!important;

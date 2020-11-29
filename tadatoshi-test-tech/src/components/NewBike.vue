@@ -8,7 +8,7 @@
 		>
 		<h2 class="typography--display-1">Ajouter un nouveau vélo</h2>
 		<p class="my-5" v-if="errors.length">
-			<b>Please correct the following error(s):</b>
+			<b>Veuillez corriger l'erreur(s) suivante(s):</b>
 			<ul class="error-message typography--heading danger">
 				<li v-for="error in errors" :key="error.id">{{ error }}</li>
 			</ul>
@@ -125,13 +125,14 @@ export default {
       e.preventDefault();
       this.errors = [];
 
+      // Check if the serial number is not already exist
 			const checkBikes = (this.info).find( bike => bike.serial_number === this.serial_number)
 			if (checkBikes === undefined) {
 				 this.isANewBike = true
 			} else {
 				 this.isANewBike = false
 			}
-      if (this.isANewBike === false) { console.log('test ', this.isANewBike)
+      if (this.isANewBike === false) {
         this.errors.push("this serial number already exist");
       } else {
         axios
@@ -149,7 +150,7 @@ export default {
           .then((res) => alert(`le vélo a bien été ajouté`))
           .catch((err) => alert(`erreur dans l'ajout d'un nouveau vélo : ${err}`)
           );
-      }
+        }
     },
   },
 };
