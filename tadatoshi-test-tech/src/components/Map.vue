@@ -58,7 +58,6 @@ export default {
       bikeInformations: "",
       clickMarker: false,
       createNewBike: false,
-      addBikeMessage : "AJOUTER UN VELO /FERMER"
     };
   },
   computed: {

@@ -17,7 +17,7 @@
 		<p class="my-5">
 			<label class="typography--title" for="serial_number">Serial Number</label><br>
 			<input
-				class="typography--button my-1"
+				class="typography--button my-1 pl-1"
 				id="serial_number"
 				v-model="serial_number"
 				type="text"
@@ -30,7 +30,7 @@
 		<p class="my-5">
 			<label class="typography--title" for="location-lat">Location-lat</label><br>
 			<input
-				class="typography--button my-1"
+				class="typography--button my-1 pl-1"
 				id="location-lat"
 				v-model="lat"
 				type="number"
@@ -43,7 +43,7 @@
 		<p class="my-5">
 			<label class="typography--title" for="location-lng">Location-lng</label><br>  
 			<input
-				class="typography--button my-1"
+				class="typography--button my-1 pl-1"
 				id="location-lng"
 				v-model="lng"
 				type="text"
@@ -82,7 +82,7 @@
 		<p class="my-5">
 			<label class="typography--title" for="battery_level">Battery Level</label><br>
 			<input
-				class="typography--button my-1"
+				class="typography--button my-1 pl-1 py-2"
 				id="battery_level"
 				type="number"
 				v-model.number="battery_level"
@@ -94,7 +94,7 @@
 		
 		<p class="my-5">
 			<input
-				class="typography--button my-1"
+				class="button-send neutral typography--button"
 				type="submit"
 				value="Submit"
 			>

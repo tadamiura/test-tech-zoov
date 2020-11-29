@@ -79,7 +79,7 @@ form {
 
 input, select {
     height: 25px;
-    width: -webkit-fill-available;
+    width: 100%;
     background-color: #FFF!important;
 }
 
@@ -90,7 +90,7 @@ select {
     text-align-last: center;
 }
 
-.button-add-bike {
+.button-add-bike, .button-send {
     border-radius: 15px;
     border: 1px solid #111;
 }
