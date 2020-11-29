@@ -32,7 +32,6 @@
     </button>
     <NewBike 
     v-if="createNewBike"
-    :bikeInformations="bikeInformations"
     :info="info" 
     />
     <UpdateBike v-if="clickMarker" 
@@ -40,9 +39,9 @@
   </div>
 </template>
 <script>
-import axios from "axios";
-import Modal from "./Modal";
-import UpdateBike from "./UpdateBike";
+import axios from "axios"
+import Modal from "./Modal"
+import UpdateBike from "./UpdateBike"
 import NewBike from "./NewBike"
 export default {
   components: {
@@ -65,38 +64,41 @@ export default {
       return 'https://i.ibb.co/h9G3p1d/sty-QR-logo-pwa-3.png';
     },
   },
-  mounted() {
-    axios
-      .get("https://jsonbox.io/box_82a8f61b98e392c9568b")
-      .then((res) =>
-        res.data.forEach((item, index) => {
-          this.info = res.data;
-        })
-      )
-      .catch((error) => console.log("error", error));
-    this.geolocation();
+  mounted() { 
+    this.getInfo(),
+    this.geolocation()
   },
   methods: {
+    getInfo() {
+      axios
+        .get("https://jsonbox.io/box_ac93166e2a967868a774")
+        .then((res) =>
+          res.data.forEach((item, index) => {
+            this.info = res.data;
+          })
+        )
+        .catch((error) => console.log("error", error))
+    },
     geolocation() {
       navigator.geolocation.getCurrentPosition((position) => {
         this.currentLocation = {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
-        };
-      });
+        }
+      })
     },
     showModal(bike) {
-      this.isModalVisible = true;
-      this.bikeInformations = bike;
-      this.clickMarker = false;
+      this.isModalVisible = true
+      this.bikeInformations = bike
+      this.clickMarker = false
     },
     closeModal(bike) {
-      this.isModalVisible = false;
-      this.clickMarker = true;
+      this.isModalVisible = false
+      this.clickMarker = true
     },
     addBike() {
         this.createNewBike = !this.createNewBike
     },
   },
-};
+}
 </script>
